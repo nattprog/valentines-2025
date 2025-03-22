@@ -13,10 +13,14 @@ A Flask static website application to wow your significant other this Valentine'
 
 ## How to run:
 Requires Flask library, run:<br/>
-`pip install Flask`
+```
+pip install Flask
+```
 
 From `/Flask-app/` directory, run the app:<br/>
-`py app.py`
+```
+py app.py
+```
 
 ## Feel free to re-use and/or repurpose:
 (for non-commercial purposes only)
