@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        background-color: rgb(44, 44, 44);
+      }
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      /*/////////////////////////////////////////////////////////////
+                    Start of Hearts
+      /////////////////////////////////////////////////////////////*/
+
+      /* Container for hearts, ideally needs same width and height */
+      .container--hearts {
+        --heart-scale: 0.5; /*numeric value*/
+        width: calc(var(--heart-scale) * 4em);
+        height: calc(var(--heart-scale) * 4em);
+
+        position: absolute;
+      }
+
+      /* Start of Heart shape */
+
+      .heart {
+        position: absolute;
+        /* --heart-scale: 0.5; */
+        font-size: calc(1em * var(--heart-scale) * 1em);
+        width: calc(var(--heart-scale) * 4em);
+        height: calc(var(--heart-scale) * 4em);
+      }
+
+      .heart > div {
+        position: absolute;
+        width: calc(var(--heart-scale) * 4em);
+        height: calc(var(--heart-scale) * 4em);
+        background-color: red;
+        box-shadow: 0 0 5rem rgb(255, 0, 0, 0.5);
+      }
+
+      .heart > div:before {
+        content: "";
+        border-radius: 50%;
+        position: absolute;
+        width: calc(var(--heart-scale) * 4em);
+        height: calc(var(--heart-scale) * 4em);
+        top: calc(var(--heart-scale) * -2em);
+        background-color: red;
+        box-shadow: 0 0 5rem rgba(255, 0, 0, 0.5);
+      }
+
+      .heart > div:nth-child(1) {
+        transform: rotate(-45deg);
+      }
+
+      .heart > div:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      /* End of Heart shape */
+
+      /* Start of Heart animation */
+
+      .heart--float-animation {
+        --heart--float-animation--offset-X: 0em;
+        --heart--float-animation--offset-Y: 0em;
+        --heart--float-animation--angle: 90deg; /* alter this value to change degrees. 90deg is to vertical up */
+        animation-name: heart--float-animation;
+        animation-duration: 1.5s;
+        animation-fill-mode: both;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+
+      .heart--float-animation--0 {
+        --heart--float-animation--angle: 90deg;
+      }
+
+      .heart--float-animation--1 {
+        --heart--float-animation--angle: 60deg;
+        animation-delay: 0.3s;
+      }
+
+      .heart--float-animation--2 {
+        --heart--float-animation--angle: 120deg;
+        animation-delay: 0.6s;
+      }
+
+      .heart--float-animation--3 {
+        --heart--float-animation--angle: 105deg;
+        animation-delay: 0.9s;
+      }
+
+      .heart--float-animation--4 {
+        --heart--float-animation--angle: 75deg;
+        animation-delay: 1.2s;
+      }
+
+      .heart--float-animation--no-anim-delay {
+        animation-delay: 0s;
+      }
+
+      @keyframes heart--float-animation {
+        0% {
+          opacity: 0%;
+          transform: translate(
+            calc(
+              cos(calc(var(--heart--float-animation--angle) + 5deg)) *
+                calc(var(--heart-scale) * -0em) +
+                calc(var(--heart--float-animation--offset-X))
+            ),
+            calc(
+              sin(calc(var(--heart--float-animation--angle) + 5deg)) *
+                calc(var(--heart-scale) * -0em) +
+                calc(var(--heart--float-animation--offset-Y))
+            )
+          );
+        }
+
+        20% {
+          opacity: 100%;
+          transform: translate(
+            calc(
+              cos(calc(var(--heart--float-animation--angle) - 5deg)) *
+                calc(var(--heart-scale) * -10em) +
+                calc(var(--heart--float-animation--offset-X))
+            ),
+            calc(
+              sin(calc(var(--heart--float-animation--angle) - 5deg)) *
+                calc(var(--heart-scale) * -10em) +
+                calc(var(--heart--float-animation--offset-Y))
+            )
+          );
+        }
+
+        40% {
+          transform: translate(
+            calc(
+              cos(calc(var(--heart--float-animation--angle) + 5deg)) *
+                calc(var(--heart-scale) * -20em) +
+                calc(var(--heart--float-animation--offset-X))
+            ),
+            calc(
+              sin(calc(var(--heart--float-animation--angle) + 5deg)) *
+                calc(var(--heart-scale) * -20em) +
+                calc(var(--heart--float-animation--offset-Y))
+            )
+          );
+        }
+
+        60% {
+          transform: translate(
+            calc(
+              cos(calc(var(--heart--float-animation--angle) - 5deg)) *
+                calc(var(--heart-scale) * -30em) +
+                calc(var(--heart--float-animation--offset-X))
+            ),
+            calc(
+              sin(calc(var(--heart--float-animation--angle) - 5deg)) *
+                calc(var(--heart-scale) * -30em) +
+                calc(var(--heart--float-animation--offset-Y))
+            )
+          );
+        }
+
+        80% {
+          transform: translate(
+            calc(
+              cos(calc(var(--heart--float-animation--angle) + 5deg)) *
+                calc(var(--heart-scale) * -40em) +
+                calc(var(--heart--float-animation--offset-X))
+            ),
+            calc(
+              sin(calc(var(--heart--float-animation--angle) + 5deg)) *
+                calc(var(--heart-scale) * -40em) +
+                calc(var(--heart--float-animation--offset-Y))
+            )
+          );
+        }
+
+        90% {
+          opacity: 100%;
+        }
+
+        100% {
+          opacity: 0%;
+          transform: translate(
+            calc(
+              cos(calc(var(--heart--float-animation--angle) - 5deg)) *
+                calc(var(--heart-scale) * -50em) +
+                calc(var(--heart--float-animation--offset-X))
+            ),
+            calc(
+              sin(calc(var(--heart--float-animation--angle) - 5deg)) *
+                calc(var(--heart-scale) * -50em) +
+                calc(var(--heart--float-animation--offset-Y))
+            )
+          );
+        }
+      }
+
+      /* End of Heart animation */
+
+      /*/////////////////////////////////////////////////////////////
+                    End of Hearts
+      /////////////////////////////////////////////////////////////*/
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <!--Start-->
+      <div class="container--hearts">
+        <div class="heart heart--float-animation">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="heart heart--float-animation heart--float-animation--1">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="heart heart--float-animation heart--float-animation--2">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="heart heart--float-animation heart--float-animation--3">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="heart heart--float-animation heart--float-animation--4">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <!--End-->
+    </main>
+  </body>
+</html>

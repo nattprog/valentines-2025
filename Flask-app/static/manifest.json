@@ -1,0 +1,17 @@
+{
+    "name": "Val's for [Lover]",
+    "start_url": "/",
+    "display": "minimal-ui",
+    "icons": [
+  {
+    "src": "/static/images/192.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  },
+  {
+    "src": "/static/images/512.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  }
+]
+  }

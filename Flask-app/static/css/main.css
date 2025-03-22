@@ -1,0 +1,407 @@
+/*/////////////////////////////////////////////////////////////
+                    Start of Typography
+/////////////////////////////////////////////////////////////*/
+
+h1 {
+    font-size: 2.019rem;
+    /* line-height: 1.3; */
+}
+
+h2 {
+    font-size: 1.756rem;
+    /* line-height: 1.3; */
+}
+
+h3 {
+    font-size: 1.525rem;
+    /* color: var(--color-secondary);
+    margin-block-end: 0;
+    text-transform: uppercase;
+    line-height: 1.3; */
+}
+
+h4 {
+    font-size: 1.325rem;
+    /* color: var(--color-accent);
+    margin: 0;
+    line-height: 1.3; */
+}
+
+h5 {
+    font-size: 1.15rem;
+    /* font-weight: normal;
+    line-height: 1.3; */
+}
+
+h6 {
+    font-size: 1rem;
+    /* text-transform: uppercase;
+    margin-block-end: 0.5rem; */
+}
+
+@media only screen and (min-width: 45em) {
+    h1 {
+        font-size: 2.481rem;
+    }
+
+    h2 {
+        font-size: 2.069rem;
+    }
+
+    h3 {
+        font-size: 1.725rem;
+    }
+
+    h4 {
+        font-size: 1.438rem;
+    }
+
+    h5 {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 60em) {
+    h1 {
+        font-size: 3.056rem;
+    }
+
+    h2 {
+        font-size: 2.444rem;
+    }
+
+    h3 {
+        font-size: 1.956rem;
+    }
+
+    h4 {
+        font-size: 1.563rem;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+    }
+}
+
+/*/////////////////////////////////////////////////////////////
+                    End of Typography
+/////////////////////////////////////////////////////////////*/
+
+/*/////////////////////////////////////////////////////////////
+                    Start of Hearts
+/////////////////////////////////////////////////////////////*/
+
+.container--hearts {
+    --heart-scale: 0.8; /*numeric value*/
+    width: calc(var(--heart-scale)*4em);
+    height: calc(var(--heart-scale)*4em);
+
+    position: absolute;
+}
+
+.heart {
+    position: absolute;
+    /* --heart-scale: 0.5; */
+    font-size: calc(1em*var(--heart-scale)*1em);
+    width: calc(var(--heart-scale)*4em);
+    height: calc(var(--heart-scale)*4em);
+}
+
+.heart>div {
+    position: absolute;
+    width: calc(var(--heart-scale)*4em);
+    height: calc(var(--heart-scale)*4em);
+    background-color: red;
+    box-shadow: 0 0 5rem rgb(255, 0, 0, 0.5);
+}
+
+.heart>div:before {
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: calc(var(--heart-scale)*4em);
+    height: calc(var(--heart-scale)*4em);
+    top: calc(var(--heart-scale)*-2em);
+    ;
+    background-color: red;
+    box-shadow: 0 0 5rem rgba(255, 0, 0, 0.5);
+}
+
+.heart>div:nth-child(1) {
+    transform: rotate(-45deg);
+}
+
+.heart>div:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.heart--float-animation {
+    --heart--float-animation--offset-X: 0em;
+    --heart--float-animation--offset-Y: 0em;
+    --heart--float-animation--angle: 90deg;
+    animation-name: heart--float-animation;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    /* animation-iteration-count: infinite; */
+}
+
+.heart--float-animation--0 {
+    --heart--float-animation--angle: 90deg;
+}
+
+
+.heart--float-animation--1 {
+    --heart--float-animation--angle: 60deg;
+    /* animation-delay: 0.3s; */
+}
+
+.heart--float-animation--2 {
+    --heart--float-animation--angle: 120deg;
+    /* animation-delay: 0.6s; */
+}
+
+.heart--float-animation--3 {
+    --heart--float-animation--angle: 105deg;
+    /* animation-delay: 0.9s; */
+}
+
+.heart--float-animation--4 {
+    --heart--float-animation--angle: 75deg;
+    /* animation-delay: 1.2s; */
+}
+
+/* .heart--float-animation--no-anim-delay {
+    animation-delay: 0s;
+} */
+
+@keyframes heart--float-animation {
+    0% {
+        opacity: 0%;
+        transform: translate(calc(cos(calc(var(--heart--float-animation--angle) + 5deg))*calc(var(--heart-scale)*-0em) + calc(var(--heart--float-animation--offset-X))), calc(sin(calc(var(--heart--float-animation--angle) + 5deg))*calc(var(--heart-scale)*-0em) + calc(var(--heart--float-animation--offset-Y))));
+    }
+
+    /* 10% {opacity: 100%;} */
+    20% {
+        opacity: 100%;
+        transform: translate(calc(cos(calc(var(--heart--float-animation--angle) - 5deg))*calc(var(--heart-scale)*-10em) + calc(var(--heart--float-animation--offset-X))), calc(sin(calc(var(--heart--float-animation--angle) - 5deg))*calc(var(--heart-scale)*-10em) + calc(var(--heart--float-animation--offset-Y))));
+    }
+
+    40% {
+        transform: translate(calc(cos(calc(var(--heart--float-animation--angle) + 5deg))*calc(var(--heart-scale)*-20em) + calc(var(--heart--float-animation--offset-X))), calc(sin(calc(var(--heart--float-animation--angle) + 5deg))*calc(var(--heart-scale)*-20em) + calc(var(--heart--float-animation--offset-Y))));
+    }
+
+    60% {
+        transform: translate(calc(cos(calc(var(--heart--float-animation--angle) - 5deg))*calc(var(--heart-scale)*-30em) + calc(var(--heart--float-animation--offset-X))), calc(sin(calc(var(--heart--float-animation--angle) - 5deg))*calc(var(--heart-scale)*-30em) + calc(var(--heart--float-animation--offset-Y))));
+    }
+
+    80% {
+        transform: translate(calc(cos(calc(var(--heart--float-animation--angle) + 5deg))*calc(var(--heart-scale)*-40em) + calc(var(--heart--float-animation--offset-X))), calc(sin(calc(var(--heart--float-animation--angle) + 5deg))*calc(var(--heart-scale)*-40em) + calc(var(--heart--float-animation--offset-Y))));
+    }
+
+    90% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+        transform: translate(calc(cos(calc(var(--heart--float-animation--angle) - 5deg))*calc(var(--heart-scale)*-50em) + calc(var(--heart--float-animation--offset-X))), calc(sin(calc(var(--heart--float-animation--angle) - 5deg))*calc(var(--heart-scale)*-50em) + calc(var(--heart--float-animation--offset-Y))));
+    }
+}
+
+/*/////////////////////////////////////////////////////////////
+                    End of Hearts
+/////////////////////////////////////////////////////////////*/
+
+* {
+    transition: transform 0.2s, font-size 0.2s;
+    
+}
+
+html {
+    overflow-x: hidden;
+    
+}
+
+html,
+body {
+    /* font-family: 'Roboto', Arial, Helvetica, sans-serif; */
+    font-family: monospace, 'Courier New', Courier;
+}
+
+body {
+    background-color: black;
+}
+
+.a--btn-non-border {
+    color:#fff6ff;
+    text-decoration: none;
+}
+
+.a--btn-non-border:hover, .a--btn-non-border:focus {
+    color:rgb(171, 49, 190);
+}
+
+.pageTwo__content__title {
+    background-color: rgba(22, 0, 35, 0.607);
+    box-shadow: 0 0 0.2em rgb(27, 0, 44);
+    padding: 0.2em;
+    border-radius: 0.5em;
+}
+
+.pageThree__content__title {
+    background-color: rgba(22, 0, 35, 0.607);
+    box-shadow: 0 0 0.2em rgb(27, 0, 44);
+    padding: 0.2em;
+    border-radius: 0.5em;
+}
+
+.main {
+    background-color: rgb(27, 0, 44);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.inactive {
+    display: none;
+}
+
+.page {
+    color: #fff6ff;
+    height: max(100vh, 50rem);
+    width: min(65em, 100%);
+}
+
+.page__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pageOne__content {
+    gap: 10em;
+}
+
+.pageTwo__content {
+    position: relative;
+}
+
+.pageTwo__content > .container--hearts {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+    overflow: hidden;
+
+    --heart-scale: 1;
+    opacity: 50%;
+}
+
+.pageTwo__content > .container--hearts > .heart {
+    position: relative;
+}
+
+.pageTwo__content > .container--hearts > .heart--float-animation {
+    position: relative;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+}
+
+.pageTwo__content__title {
+    z-index: 1;
+    text-align: center;
+}
+
+.pageThree__content__title {
+    z-index: 1;
+    text-align: center;
+}
+
+.question {
+    align-self: stretch;
+    position: relative;
+    z-index: 1000;
+}
+
+.question > h1 {
+    /* font-size: 2em; */
+    width: 100%;
+    background-color: rgba(22, 0, 35, 0.607);
+    box-shadow: 0 0 0.2em rgb(27, 0, 44);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    text-align: center;
+}
+
+.answers {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 4em;
+}
+
+.btn {
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    /* margin-block-end: 2em; */
+    padding: 1em;
+    border-radius: 0.5em;
+    border: none;
+    background-color: rgb(80, 49, 190);
+    color: #fff6ff;
+    transition: all 0.2s;
+    text-decoration: none;
+    line-height: normal;
+}
+
+.btn:hover {
+    background-color: rgb(119, 49, 190);
+    transform: scale(1.2);
+}
+
+.btn:active,
+.tbn:focus {
+    background-color: rgb(171, 49, 190);
+}
+
+.btn--primary {
+    font-size: 1.756rem;
+    position: relative;
+    z-index: 1000;
+}
+
+.answers__yes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.answers .btn {
+    width: 5em;
+}
+
+
+
+@media only screen and (min-width: 45em) {
+    .btn--primary {
+        font-size: 2.069rem;
+    }
+}
+
+@media only screen and (min-width: 60em) {
+    .btn--primary {
+        font-size: 2.444rem;
+    }
+}

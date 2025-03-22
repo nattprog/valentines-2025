@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/normalize.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+
+    <script
+      type="module"
+      src="{{ url_for('static', filename='./js/main.js') }}"
+    ></script>
+    <title>Val's for [Lover]</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static', filename='./images/favicon.ico') }}"
+    />
+    <link
+      rel="manifest"
+      href="{{ url_for('static', filename='manifest.json') }}"
+    />
+  </head>
+
+  <body>
+    <main class="main">
+      <section id="pageOne" class="page inactive">
+        <div class="page__content pageOne__content">
+          <div class="question">
+            <h1>
+              <span style="font-size: 0.8em; text-align: left"
+                >Dear [Lover],</span
+              ><br /><br />Will you be the CSS to my HTML?
+            </h1>
+          </div>
+          <div class="answers">
+            <div class="answers__yes">
+              <a href="#yes" id="btn--yes" class="btn btn--primary btn--yes">
+                <span>YES!!!</span>
+              </a>
+              <div id="container--hearts" class="container--hearts"></div>
+            </div>
+
+            <a href="#no" id="btn--no" class="btn btn--primary btn--no">
+              <span>NO...</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="pageTwo" class="page inactive">
+        <div class="page__content pageTwo__content">
+          <h1 class="pageTwo__content__title inactive">
+            <a id="yes-message-0" class="a--btn-non-border" href="#yes-1"
+              >YAYY!!! Okay, lemme... *clears throat*</a
+            >
+          </h1>
+          <h1 class="pageTwo__content__title inactive">
+            <a id="yes-message-1" class="a--btn-non-border" href="#yes-2"
+              ><!--Placeholder text-->
+              Lorem ipsum dolor sit amet consectetur adipisicing elit;<br /><br />consequuntur
+              ab debitis, expedita obcaecati dolor qui omnis magnam.</a
+            >
+          </h1>
+          <h1 class="pageTwo__content__title inactive">
+            <a id="yes-message-2" class="a--btn-non-border" href="#yes-3"
+              ><!--Placeholder text-->Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit;<br /><br />Minima saepe dolor exercitationem
+              inventore aut dicta beatae ducimus eveniet a est.</a
+            >
+          </h1>
+          <h1 class="pageTwo__content__title inactive">
+            <a id="yes-message-3" class="a--btn-non-border" href="#yes-4"
+              >I'm always your [Loved], forever your boo;</a
+            >
+          </h1>
+          <h1 class="pageTwo__content__title inactive">
+            <a id="yes-message-4" class="a--btn-non-border" href="#yes-5"
+              >my darling [Lover], love you? I do.</a
+            >
+          </h1>
+          <h1 class="pageTwo__content__title inactive">
+            <a id="yes-message-5" class="a--btn-non-border" href="#"
+              ><span style="font-size: 0.8em"
+                >Yours always, with lots of hugs and kisses, [Loved]
+                &#60;[Lover&Loved]&#62;</span
+              ><br /><span style="font-size: 0.5em">Valentine's 2025</span></a
+            >
+          </h1>
+          <div class="container--hearts">
+            <div class="heart heart--float-animation">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="heart heart--float-animation">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="heart heart--float-animation">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="heart heart--float-animation">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="heart heart--float-animation">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="heart heart--float-animation">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="heart heart--float-animation">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="heart heart--float-animation">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="heart heart--float-animation">
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="pageThree" class="page inactive">
+        <div class="page__content pageThree__content">
+          <h1 class="pageThree__content__title inactive">
+            <a id="no-message-0" class="a--btn-non-border" href="#"
+              >Aww... Okay.
+            </a>
+          </h1>
+          <h1 class="pageThree__content__title inactive">
+            <a id="no-message-1" class="a--btn-non-border" href="#">naughty</a>
+          </h1>
+          <h1 class="pageThree__content__title inactive">
+            <a id="no-message-2" class="a--btn-non-border" href="#">idiot</a>
+          </h1>
+          <h1 class="pageThree__content__title inactive">
+            <a id="no-message-3" class="a--btn-non-border" href="#"
+              >Alright, fine. Let's play some games together instead? Or watch a
+              movie of your choice ! &#60;3</a
+            >
+          </h1>
+        </div>
+      </section>
+      <section id="pageFour" class="page inactive">
+        <div class="page__content pageFour__content"></div>
+      </section>
+    </main>
+  </body>
+</html>
